@@ -1,0 +1,22 @@
+Metadata:
+  SecurityGroup:
+    Description: "security group"
+
+Outputs:
+  SecurityGroup:
+    Description: "Security group"
+    Value: !Ref SecurityGroup
+    Export:
+      Name: !Sub "${AWS::StackName}-SecurityGroupID"
+
+Resources:
+  SecurityGroup:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      VpcId: "vpc-001879f65b53e99fd"
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0

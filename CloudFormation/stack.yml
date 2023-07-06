@@ -1,0 +1,8 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  RomanStack:
+    Type: "AWS::CloudFormation::Stack"
+    Properties:
+      TemplateURL: "https://romang-stack-sg-test.s3.eu-west-1.amazonaws.com/securityGroupWeb.yml"
+      TimeoutInMinutes: 60

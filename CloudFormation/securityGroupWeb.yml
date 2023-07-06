@@ -1,0 +1,26 @@
+Metadata:
+  SecurityGroup:
+    Description: "security group web"
+
+Outputs:
+  SecurityGroup:
+    Description: "Security group web"
+    Value: !Ref SecurityGroup
+    Export:
+      Name: !Sub "${AWS::StackName}-SecurityGroupWebID"
+
+Resources:
+  SecurityGroup:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
+      GroupDescription: Enable http/https access
+      VpcId: "vpc-001879f65b53e99fd"
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
