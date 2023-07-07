@@ -19,6 +19,7 @@ phases:
       - echo "Check aws and git version"
       - aws --version
       - git --version
+      - docker --version
 
   pre_build:
     commands:
