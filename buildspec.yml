@@ -20,8 +20,8 @@ phases:
       - aws --version
       - git --version
       - docker --version
-      - sudo systemctl start docker
-      - sudo systemctl enable docker
+      # - sudo systemctl start docker
+      # - sudo systemctl enable docker
 
   pre_build:
     commands:
