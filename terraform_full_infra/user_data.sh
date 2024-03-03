@@ -9,3 +9,4 @@ version 3
 EOF
 
 systemctl start httpd
+systemctl enable httpd
